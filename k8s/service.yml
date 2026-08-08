@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: biofire-mpc
+  namespace: biofire
+spec:
+  selector:
+    app: biofire-mpc
+  ports:
+    - name: http
+      port: 3000
+      targetPort: 3000
+    - name: metrics
+      port: 9090
+      targetPort: 9090
+  type: ClusterIP
